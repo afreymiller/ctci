@@ -3,14 +3,18 @@ public class TestRunner {
       
     ArraysAndStrings problems = new ArraysAndStrings();
 
+    Calculator c = new Calculator();
+
+
+
     /* Test cases */
     // boolean outcome1 = problems.isPermutation("car", "rac");
     // boolean outcome2 = problems.isPermutation("cbr", "rac");
     // boolean outcome3 = problems.isPermutation("ca", "rac");
 
-    boolean outcome1 = problems.hasUniqueCharacters("abv");
+    // boolean outcome1 = problems.hasUniqueCharacters("abv");
 
-    System.out.println(outcome1);
+    System.out.println(c.subtract(3, 7));
 
   }
 }
