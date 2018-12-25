@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class ArraysAndStrings {
 
     /* 1.1 */
@@ -87,5 +89,15 @@ public class ArraysAndStrings {
                 newLength -= 1;
             }
         }
+    }
+
+    /* 1.5 */
+    public boolean oneAway (String a, String b) {
+        int lengthDifference = a.length() - b.length();
+        if (Math.abs(lengthDifference) >= 2) {
+            return false;
+        }
+
+        return true;
     }
 }
