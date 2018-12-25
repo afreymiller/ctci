@@ -91,17 +91,11 @@ public class ArraysAndStrings {
         }
     }
 
-    /* 1.5 */
-    public boolean oneAway (String a, String b) {
-        int lengthDifference = a.length() - b.length();
-        if (Math.abs(lengthDifference) >= 2) {
-            return false;
-        }
-
+    public boolean sameLengthCheck (String a, String b) {
         boolean oneDiffHasBeenFound = false;
         int i, length = Math.min(a.length(), b.length());
 
-        for (i = 0; i < length; i++) {
+        for (i = 0; i < length; i++) {  
             if (a.charAt(i) != b.charAt(i)) {
                 if (oneDiffHasBeenFound) {
                     return false;
@@ -111,5 +105,43 @@ public class ArraysAndStrings {
         }
 
         return true;
+    }
+
+    public boolean diffByOneCheck (String a, String b) {
+        int aIndex, bIndex;
+        aIndex = 0;
+        bIndex = 0;
+
+        while (aIndex < a.length() && bIndex < b.length()) {
+            if (a.charAt(aIndex) != b.charAt(bIndex)) {
+                if (aIndex != bIndex) {
+                    return false;
+                }
+
+                aIndex++;
+            } else {
+                aIndex++;
+                bIndex++;
+            }
+        }
+
+        return true; 
+    }
+
+    /* 1.5 */
+    public boolean oneAway (String a, String b) {
+        int lengthDifference = a.length() - b.length();
+        if (Math.abs(lengthDifference) >= 2) {
+            return false;
+        }
+
+        if (Math.abs(lengthDifference) == 0) {
+            return sameLengthCheck(a, b);
+        } else if (lengthDifference > 0) {
+            return diffByOneCheck(a, b);
+        } else {
+            return diffByOneCheck(b, a);
+        }
+        
     }
 }
