@@ -3,13 +3,8 @@ public class TestRunner {
       
     ArraysAndStrings problems = new ArraysAndStrings();
 
-    // Prints "Hello, World" to the terminal window.
-    System.out.println("Hello, World");
-
-    boolean outcome = problems.isPermutation("hllo", "world");
+    boolean outcome = problems.isPermutation("car", "rac");
 
     System.out.println(outcome);
-
-    // isPermutation("hello", "world");
   }
 }
