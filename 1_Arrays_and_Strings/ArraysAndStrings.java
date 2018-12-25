@@ -1,5 +1,33 @@
 public class ArraysAndStrings {
 
+    /* 1.1 */
+    public boolean hasUniqueCharacters(String s) {
+        int [] chars = new int[128];
+
+        char [] sArr = s.toCharArray();
+
+        int i = 0, index;
+        int sLen = sArr.length;
+
+        /* O{n) */
+        while (i < sLen) {
+            index = (int) sArr[i];
+            chars[index]++;
+
+            if (chars[index] > 1) {
+                return false;
+            }
+
+            i++;
+        }
+
+        return true;
+
+        /* if they want me to do it without using a data structure,
+        have to map everything onto an integer and use bit manipulation */
+    }
+
+    /* 1.2 */
     public boolean isPermutation (String a, String b) {
         if (a.length() != b.length()) {
             return false;
