@@ -98,6 +98,18 @@ public class ArraysAndStrings {
             return false;
         }
 
+        boolean oneDiffHasBeenFound = false;
+        int i, length = Math.min(a.length(), b.length());
+
+        for (i = 0; i < length; i++) {
+            if (a.charAt(i) != b.charAt(i)) {
+                if (oneDiffHasBeenFound) {
+                    return false;
+                }
+                oneDiffHasBeenFound = true;
+            }
+        }
+
         return true;
     }
 }
