@@ -62,4 +62,30 @@ public class ArraysAndStrings {
 
         return true;
     }
+
+    /* 1.3 */
+    public void urlify (char [] s, int len) {
+        int spaceCount = 0, newLength, i;
+
+        for (i = 0; i < len; i++) {
+            if (s[i] == ' ') {
+                spaceCount++;
+            }
+        }
+
+        newLength = len + (spaceCount * 2);
+        s[newLength] = '\0';
+
+        for (i = len-1; i >= 0; i--) {
+            if (s[i] == ' ') {
+                s[newLength - 1] = '0';
+                s[newLength - 2] = '2';
+                s[newLength - 3] = '%';
+                newLength = newLength - 3;
+            } else {
+                s[newLength - 1] = s[i];
+                newLength -= 1;
+            }
+        }
+    }
 }
