@@ -11,7 +11,10 @@ public class ArraysAndStrings {
         int i = 0, index;
         int len = aArr.length;
 
+        /* O(n) */
         while (i < len) {
+            /* Cast the character to ASCII
+            equivalent then map it */
             index = (int) aArr[i];
             chars[index]++;
             i++;
@@ -19,6 +22,7 @@ public class ArraysAndStrings {
 
         int j = 0;
 
+        /* O(n) */
         while (j < len) {
             index = (int) b.charAt(j);
             chars[index]--;
