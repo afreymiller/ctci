@@ -3,8 +3,10 @@ public class TestRunner {
       
     ArraysAndStrings problems = new ArraysAndStrings();
 
-    boolean outcome = problems.isPermutation("car", "rac");
+    /* Test cases */
+    boolean outcome1 = problems.isPermutation("car", "rac");
+    boolean outcome2 = problems.isPermutation("cbr", "rac");
+    boolean outcome3 = problems.isPermutation("ca", "rac");
 
-    System.out.println(outcome);
   }
 }
