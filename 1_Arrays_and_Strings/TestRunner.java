@@ -14,7 +14,7 @@ public class TestRunner {
 
     // boolean outcome1 = problems.hasUniqueCharacters("abv");
 
-    System.out.println(problems.oneAway("a", "bcd"));
+    System.out.println(problems.oneAway("ab", "ac"));
 
   }
 }
