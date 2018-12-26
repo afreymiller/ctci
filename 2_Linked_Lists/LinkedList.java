@@ -1,4 +1,7 @@
 
+import java.util.HashMap;
+import java.util.*;
+
 public class LinkedList {
 
   Node head = null;
@@ -33,7 +36,7 @@ public class LinkedList {
     n.next = end;
   }
 
-  void deleteNodesOfValue(int d) {
+  void deleteFirstValueOf(int d) {
     Node n = head;
 
     if (n.data == d) {
@@ -46,6 +49,7 @@ public class LinkedList {
       if (n.next.data == d) {
         if (n.next.next != null) {
           n.next = n.next.next;
+          break;
         } else {
           n.next = null;
           break;
@@ -57,21 +61,37 @@ public class LinkedList {
     head = copyOfHead;
   }
 
-  Node removeDuplicates(Node head) {
+  void removeDuplicates() {
     Node n = head;
-    int [] values = new int[10];
 
-    while (head.next != null) {
-      if (values[head.data] == 0) {
-        n.next = head.next;
-        head = head.next;
+    HashMap<Integer, Integer> valFrequencies = new HashMap<Integer, Integer>();
+
+    while (n != null) {
+
+      if (valFrequencies.containsKey(n.data)) {
+        int count = valFrequencies.get(n.data);
+        count++;
+        valFrequencies.put(n.data, count);
       } else {
-        head = head.next;
+        valFrequencies.put(n.data, 1);
       }
+
+      n = n.next;
     }
 
-    traverseList();
+    List<Integer> l = new ArrayList<Integer>(valFrequencies.keySet());
 
-    return n;
+    for (int i : l) {
+      // accessing each element of array
+      int count = valFrequencies.get(i);
+
+      System.out.println("i: " + Integer.toString(i));
+      System.out.println("count: " + Integer.toString(count));
+
+      while (count > 1) {
+        deleteFirstValueOf(i);
+        count--;
+      }
+    }
   }
 } 
