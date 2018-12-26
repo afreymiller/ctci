@@ -33,21 +33,28 @@ public class LinkedList {
     n.next = end;
   }
 
-  Node deleteNode(Node head, int d) {
+  void deleteNodesOfValue(int d) {
     Node n = head;
 
     if (n.data == d) {
-      return head.next;
+      n = n.next;
     }
+
+    Node copyOfHead = n;
 
     while (n.next != null) {
       if (n.next.data == d) {
-        n.next = n.next.next;
-        return head;
+        if (n.next.next != null) {
+          n.next = n.next.next;
+        } else {
+          n.next = null;
+          break;
+        }
       }
       n = n.next;
     }
-    return head;
+
+    head = copyOfHead;
   }
 
   Node removeDuplicates(Node head) {

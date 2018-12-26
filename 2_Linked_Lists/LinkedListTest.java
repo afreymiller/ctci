@@ -1,17 +1,20 @@
+import java.util.HashMap;
 
 public class LinkedListTest {
   public static void main(String [] args) {
     LinkedList ll = new LinkedList();
-    ll.traverseList();
+    // ll.traverseList();
 
     ll.appendToTail(4);
+    ll.appendToTail(5);
 
-    ll.traverseList();
+    HashMap<String, String> capitalCities = new HashMap<String, String>();
 
-    //System.out.println(ll.head.data);
-
-    //n1.removeDuplicates(n1);
-
-    // n1.traverseList(n1);
+    // Add keys and values (Country, City)
+    capitalCities.put("England", "London");
+    capitalCities.put("Germany", "Berlin");
+    capitalCities.put("Norway", "Oslo");
+    capitalCities.put("USA", "Washington DC");
+    System.out.println(capitalCities); 
   }
 }
