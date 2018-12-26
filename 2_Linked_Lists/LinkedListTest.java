@@ -8,7 +8,7 @@ public class LinkedListTest {
     ll.appendToTail(3);
     ll.appendToTail(4);
 
-    ll.removeDuplicates();
+    ll.removeDuplicatesNoBuffer();
 
     ll.traverseList();
   }
