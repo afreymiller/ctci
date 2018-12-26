@@ -61,6 +61,7 @@ public class LinkedList {
     head = copyOfHead;
   }
 
+  /* 2.1 */
   void removeDuplicates() {
     Node n = head;
 
@@ -92,6 +93,7 @@ public class LinkedList {
     }
   }
 
+  /* 2.1 - alternate ending */
   void removeDuplicatesNoBuffer () {
     Node curr = head;
 
@@ -108,5 +110,20 @@ public class LinkedList {
 
       curr = curr.next;
     }
+  }
+
+  /* 2.2 kth to last */
+  int printKthToLast (Node hd, int k) {
+    if (hd == null) {
+      return 0;
+    }
+
+    int index = printKthToLast(hd.next, k) + 1;
+
+    if (index == k) {
+      System.out.println(Integer.toString(k) + "th to last node is " + Integer.toString(hd.data));
+    }
+    
+    return index;
   }
 } 
