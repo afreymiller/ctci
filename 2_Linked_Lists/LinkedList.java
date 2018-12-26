@@ -85,13 +85,28 @@ public class LinkedList {
       // accessing each element of array
       int count = valFrequencies.get(i);
 
-      System.out.println("i: " + Integer.toString(i));
-      System.out.println("count: " + Integer.toString(count));
-
       while (count > 1) {
         deleteFirstValueOf(i);
         count--;
       }
+    }
+  }
+
+  void removeDuplicatesNoBuffer () {
+    Node curr = head;
+
+    while (curr != null) {
+      Node runner = curr;
+
+      while (runner.next != null) {
+        if (runner.next.data == curr.data) {
+          runner.next = runner.next.next; 
+        } else {
+          runner = runner.next;
+        }
+      }
+
+      curr = curr.next;
     }
   }
 } 
