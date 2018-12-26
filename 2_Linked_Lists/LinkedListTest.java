@@ -5,13 +5,9 @@ public class LinkedListTest {
 
     ll.appendToTail(4);
     ll.appendToTail(5);
-    ll.appendToTail(3);
-    ll.appendToTail(4);
 
-    ll.removeDuplicatesNoBuffer();
+    ll.deleteMiddleNode(ll.head.next.next);
 
     ll.traverseList();
-
-    ll.printKthToLast(ll.head, 2);
   }
 }

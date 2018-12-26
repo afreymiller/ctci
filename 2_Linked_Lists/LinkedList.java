@@ -126,4 +126,15 @@ public class LinkedList {
     
     return index;
   }
+
+  /* 2.3 delete middle node */
+  void deleteMiddleNode (Node n) {
+    if (n == null || n.next == null) {
+      return;
+    }
+
+    Node next = n.next;
+    n.data = next.data;
+    n.next = next.next;
+  }
 } 
