@@ -2,9 +2,17 @@
 public class LinkedListTest {
   public static void main(String [] args) {
     LinkedList ll = new LinkedList();
-    ll.traverseList();
+    // ll.traverseList();
 
     ll.appendToTail(4);
+
+    // .traverseList();
+
+    // ll.deleteNode(3);
+
+    // ll.deleteNode(1);
+
+    ll.deleteNode(4);
 
     ll.traverseList();
 
