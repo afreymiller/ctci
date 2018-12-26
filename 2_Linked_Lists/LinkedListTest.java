@@ -1,13 +1,11 @@
 
 public class LinkedListTest {
   public static void main(String [] args) {
-    LinkedList ll = new LinkedList();
+    LinkedList l1 = new LinkedList();
+    LinkedList l2 = new LinkedList();
 
-    ll.appendToTail(4);
-    ll.appendToTail(5);
+    l2.sumLists(l1, l2);
 
-    ll.deleteMiddleNode(ll.head.next.next);
-
-    ll.traverseList();
+    l1.traverseList();
   }
 }
