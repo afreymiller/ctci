@@ -1,3 +1,4 @@
+import java.util.HashMap;
 
 public class LinkedListTest {
   public static void main(String [] args) {
@@ -7,24 +8,13 @@ public class LinkedListTest {
     ll.appendToTail(4);
     ll.appendToTail(5);
 
-    //ll.traverseList();
+    HashMap<String, String> capitalCities = new HashMap<String, String>();
 
-    // ll.deleteNode(3);
-
-    ll.deleteNodesOfValue(1);
-
-    ll.deleteNodesOfValue(4);
-
-    ll.deleteNodesOfValue(5);
-
-    ll.deleteNodesOfValue(2);
-
-    ll.traverseList();
-
-    //System.out.println(ll.head.data);
-
-    //n1.removeDuplicates(n1);
-
-    // n1.traverseList(n1);
+    // Add keys and values (Country, City)
+    capitalCities.put("England", "London");
+    capitalCities.put("Germany", "Berlin");
+    capitalCities.put("Norway", "Oslo");
+    capitalCities.put("USA", "Washington DC");
+    System.out.println(capitalCities); 
   }
 }
