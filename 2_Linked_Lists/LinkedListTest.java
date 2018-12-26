@@ -11,5 +11,7 @@ public class LinkedListTest {
     ll.removeDuplicatesNoBuffer();
 
     ll.traverseList();
+
+    ll.printKthToLast(ll.head, 2);
   }
 }
