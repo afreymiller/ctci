@@ -137,4 +137,46 @@ public class LinkedList {
     n.data = next.data;
     n.next = next.next;
   }
+
+  /* 2.4 form partition */
+  void partition (int x) {
+    Node n = new Node(x);
+
+    Node hd = n;
+    Node tl = n;
+
+    Node curr = head;
+
+    while (curr != null) {
+      if (curr.data < x) {
+        curr.next = hd;
+        hd = curr;
+      } else {
+        tl.next = curr;
+        tl = curr;
+      }
+    }
+
+    tl.next = null;
+  }
+
+  /* 2.5 sum lists */
+  void sumLists (LinkedList a, LinkedList b) {
+    Node sumList = new Node(0);
+
+    Node _a = a.head;
+    Node _b = b.head;
+
+    while (_a.next != null || _b.next != null) {
+      sumList.data = (_a.data + _b.data) % 10;
+      _a.next.data += ((_a.data + _b.data) / 10);
+
+      _a = _a.next;
+      _b = _b.next;
+    }
+
+    // System.out.println(sumList.data);
+    // System.out.println(sumList.next.data);
+    // System.out.println(sumList.next.next.data);
+  }
 } 
