@@ -5,14 +5,19 @@ public class LinkedListTest {
     // ll.traverseList();
 
     ll.appendToTail(4);
+    ll.appendToTail(5);
 
-    // .traverseList();
+    //ll.traverseList();
 
     // ll.deleteNode(3);
 
-    // ll.deleteNode(1);
+    ll.deleteNodesOfValue(1);
 
-    ll.deleteNode(4);
+    ll.deleteNodesOfValue(4);
+
+    ll.deleteNodesOfValue(5);
+
+    ll.deleteNodesOfValue(2);
 
     ll.traverseList();
 

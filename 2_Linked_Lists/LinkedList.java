@@ -33,9 +33,8 @@ public class LinkedList {
     n.next = end;
   }
 
-  void deleteNode(int d) {
+  void deleteNodesOfValue(int d) {
     Node n = head;
-    
 
     if (n.data == d) {
       n = n.next;
@@ -45,14 +44,17 @@ public class LinkedList {
 
     while (n.next != null) {
       if (n.next.data == d) {
-        n.next = n.next.next;
-        //return head;
+        if (n.next.next != null) {
+          n.next = n.next.next;
+        } else {
+          n.next = null;
+          break;
+        }
       }
       n = n.next;
     }
 
     head = copyOfHead;
-    // return head;
   }
 
   Node removeDuplicates(Node head) {
