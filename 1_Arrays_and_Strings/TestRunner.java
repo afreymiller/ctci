@@ -3,6 +3,25 @@ public class TestRunner {
       
     ArraysAndStrings problems = new ArraysAndStrings();
 
+    /* Has unique characters test suite */
+    boolean outcome1 = problems.hasUniqueCharactersWithDataStructure("abcd");
+    boolean outcome2 = problems.hasUniqueCharactersWithDataStructure("acc");
+
+    System.out.println("outcome1: ");
+    System.out.println(outcome1);
+
+    System.out.println("outcome2: ");
+    System.out.println(outcome2);
+
+    boolean outcome3 = problems.hasUniqueCharactersNoDataStructure("abcd");
+    boolean outcome4 = problems.hasUniqueCharactersNoDataStructure("aaa");
+
+    System.out.println("outcome3: ");
+    System.out.println(outcome3);
+
+    System.out.println("outcome4: ");
+    System.out.println(outcome4);
+
     Calculator c = new Calculator();
 
 

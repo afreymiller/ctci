@@ -3,7 +3,7 @@ import java.lang.Math;
 public class ArraysAndStrings {
 
     /* 1.1 */
-    public boolean hasUniqueCharacters(String s) {
+    public boolean hasUniqueCharactersWithDataStructure(String s) {
         int [] chars = new int[128];
 
         char [] sArr = s.toCharArray();
@@ -11,7 +11,7 @@ public class ArraysAndStrings {
         int i = 0, index;
         int sLen = sArr.length;
 
-        /* O{n) */
+        /* O{n) time complexity, O(1) space complexity */
         while (i < sLen) {
             index = (int) sArr[i];
             chars[index]++;
@@ -24,9 +24,22 @@ public class ArraysAndStrings {
         }
 
         return true;
+    }
 
-        /* if they want me to do it without using a data structure,
-        have to map everything onto an integer and use bit manipulation */
+    public boolean hasUniqueCharactersNoDataStructure(String s) {
+        
+        int checker = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int val = s.charAt(i) - 'a';
+
+            if ((checker & (1 << val)) > 0) {
+                return false;
+            }
+
+            checker |= (1 << val);
+        }
+
+        return true;
     }
 
     /* 1.2 */
