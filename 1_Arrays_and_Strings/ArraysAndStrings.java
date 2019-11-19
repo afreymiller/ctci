@@ -29,6 +29,7 @@ public class ArraysAndStrings {
     public boolean hasUniqueCharactersNoDataStructure(String s) {
         
         int checker = 0;
+        /* O(n) time complexity, O(1) space complexity */
         for (int i = 0; i < s.length(); i++) {
             int val = s.charAt(i) - 'a';
 
